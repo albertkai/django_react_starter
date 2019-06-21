@@ -41,9 +41,6 @@ class App extends React.Component {
         const homeClass = classNames({
             active: this.props.location && this.props.location.pathname === '/'
         });
-        const protectedClass = classNames({
-            active: this.props.location && this.props.location.pathname === '/protected'
-        });
         const loginClass = classNames({
             active: this.props.location && this.props.location.pathname === '/login'
         });
@@ -65,42 +62,22 @@ class App extends React.Component {
                                 <span className="icon-bar" />
                             </button>
                             <a className="navbar-brand" onClick={this.goToIndex}>
-                                Django React Redux Demo
+                                <strong>Twitter sentiment analysis</strong>
                             </a>
                         </div>
                         <div className="collapse navbar-collapse" id="top-navbar">
-                            {this.props.isAuthenticated ?
-                                <ul className="nav navbar-nav navbar-right">
-                                    <li className={homeClass}>
-                                        <a className="js-go-to-index-button" onClick={this.goToIndex}>
-                                            <i className="fa fa-home" /> Home
-                                        </a>
-                                    </li>
-                                    <li className={protectedClass}>
-                                        <a className="js-go-to-protected-button" onClick={this.goToProtected}>
-                                            <i className="fa fa-lock" /> Protected
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="js-logout-button" onClick={this.logout}>
-                                            Logout
-                                        </a>
-                                    </li>
-                                </ul>
-                                :
-                                <ul className="nav navbar-nav navbar-right">
-                                    <li className={homeClass}>
-                                        <a className="js-go-to-index-button" onClick={this.goToIndex}>
-                                            <i className="fa fa-home" /> Home
-                                        </a>
-                                    </li>
-                                    <li className={loginClass}>
-                                        <a className="js-login-button" onClick={this.goToLogin}>
-                                            <i className="fa fa-home" /> Login
-                                        </a>
-                                    </li>
-                                </ul>
-                            }
+                            <ul className="nav navbar-nav navbar-right">
+                                <li className={homeClass}>
+                                    <a className="js-go-to-index-button" onClick={this.goToIndex}>
+                                        <i className="fa fa-home" /> Home
+                                    </a>
+                                </li>
+                                <li className={loginClass}>
+                                    <a className="js-login-button" onClick={this.goToLogin}>
+                                        <i className="fa fa-home" /> Login
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
